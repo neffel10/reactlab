@@ -1,0 +1,47 @@
+name: Deploy Review Lab to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Asegúrate de que coincida con el nombre de tu rama principal (main o master)
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      id-token: write
+      pages: write
+
+    steps:
+      - name: Checkout Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Instalar Dependencias
+        run: npm ci
+
+      - name: Compilar Proyecto (Vite + Tailwind)
+        run: npm run build
+
+      - name: Subir Artifact de Pages
+        uses: uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
