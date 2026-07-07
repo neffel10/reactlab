@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/ReactLab/', // <-- AGREGA ESTA LÍNEA (Respeta las mayúsculas de tu repo)
+  base: '/reactlab/',
   plugins: [react()],
   resolve:{
   alias:{
