@@ -7,15 +7,16 @@ function NotesForm(){
     return(
         <Formik className="items-center align-center justify-center"
         initialValues={{title:"", body:""}}
-        validate={values=>{
-            const errors ={};
-            if(!values.title){
-                errors.title = "El titulo es requerido"
-            }else if(!values.message){
-                errors.message = "El mensaje es requerido";
-            }
-            return errors;
-        }}
+        validate={values => {
+  let errors = {};
+  if (!values.title) {
+    errors.title = 'El título es requerido';
+  }
+  if (!values.message) {
+    errors.message = 'El mensaje es requerido';
+  }
+  return errors;
+}}
     
         onSubmit={
             (values, {setSubmitting})=>{
