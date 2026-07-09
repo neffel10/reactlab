@@ -6,7 +6,7 @@ function NotesList(){
     const { notes } = useContext(NotesContext);
     return(
         <div>
-            <p style={{ textAlign: "center" }}>Tienes {notes.length} notas guardadas</p>
+            <p style={{ textAlign: "center" }}>You have {notes.length} notes saved</p>
             {
                 notes.map(note => <Note key={note.id} id={note.id} title={note.title} message={note.message} />)
             }

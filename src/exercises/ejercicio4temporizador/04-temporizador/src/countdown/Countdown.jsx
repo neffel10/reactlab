@@ -36,8 +36,8 @@ function Countdown(){
        if (elapsedSeconds>=targetSeconds && targetSeconds !== null){
         return(
             <>
-             <p>Termino!</p>
-            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>setTargetSeconds(null)}>Reiniciar Temporizador</button>
+             <p>Time's up!</p>
+            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>setTargetSeconds(null)}>Reset Timer</button>
             </>
            
         )
@@ -45,7 +45,7 @@ function Countdown(){
 
     if(targetSeconds !== null){
         return(   
-            <p>Soy un conteo hasta el {targetSeconds} y han transcurrido {elapsedSeconds}</p>
+            <p>I am a countdown to {targetSeconds} and {elapsedSeconds} seconds have passed</p>
         );
     }
 
@@ -53,10 +53,10 @@ function Countdown(){
 
     return(
         <div>
-            <p>¿Cuantos segundos quieres contar?</p>
+            <p>How many seconds do you want to count down?</p>
             <form action="#" onSubmit={ev=>parseForm(ev)}>
                 <input type="number" name="seconds" id="" />
-                <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded">Iniciar</button>
+                <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded">Start</button>
             </form>
         </div>    
     );

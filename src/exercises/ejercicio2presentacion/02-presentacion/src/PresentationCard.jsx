@@ -6,7 +6,7 @@ function PresentationCard(){
     return(
         <div className='presentation-card'>
         <img src={imagenAvatar} alt="" />
-         <h1>Hola soy {name} y estoy aprendiendo React</h1>
+         <h1>I am {name} and am learning React</h1>
         </div>
 
     

@@ -9,10 +9,10 @@ function Counter(){
 
     return(
         <div>
-            <p>Haz hecho clic {contador} veces a este boton</p>
-            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(contador+1)}}>Incrementar</button>
-            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(contador-1)}}>Decrementar</button>
-            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(0)}}>Resetear</button>
+            <p>You have clicked this button {contador} times</p>
+            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(contador+1)}}>Increment</button>
+            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(contador-1)}}>Decrement</button>
+            <button className="bg-[#00D483] border-white border-width-[1px] p-3 m-3 rounded" onClick={()=>{setContador(0)}}>Reset</button>
         </div>
     )
 }

@@ -18,8 +18,8 @@ export default function App() {
   // 2. The switch statement to render the selected exercise based on the activeTab state
   const renderExercise = () => {
     switch (activeTab) {
-      case 'hello':        return <Ejercicio1Hello />;
-      case 'presentacion': return <Ejercicio2Presentacion />;
+      
+      case 'introduction': return <Ejercicio2Presentacion />;
       case 'contador':     return <Ejercicio3Contador />;
       case 'temporizador': return <Ejercicio4Temporizador />;
       case 'lista':        return <Ejercicio5Lista />;
@@ -42,7 +42,7 @@ export default function App() {
               </p>
             </div>
             <div className="mt-6 text-xs text-slate-400 max-w-xs border border-slate-800/80 bg-slate-900/40 px-4 py-2 rounded-lg">
-              Selecciona un componente en el menú lateral para ejecutar la demo técnica.
+              Select an exercise from the sidebar to get started.
             </div>
           </div>
         );
@@ -63,60 +63,60 @@ export default function App() {
           <nav className="flex flex-col gap-1.5">
             
             {/* EXERCISE BUTTONS */}
+               
             <button 
-              onClick={() => setActiveTab('hello')} 
-              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'hello' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
+              onClick={() => setActiveTab('introduction')} 
+              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'introduction' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              01. Hello World
-            </button>      
-            <button 
-              onClick={() => setActiveTab('presentacion')} 
-              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'presentacion' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
-            >
-              02. Presentación
+              01. Introduction
             </button>
             <button 
               onClick={() => setActiveTab('contador')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'contador' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              03. Contador
+              02. Counter
             </button>
             <button 
               onClick={() => setActiveTab('temporizador')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'temporizador' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              04. Temporizador
+              03. Timer
             </button>
-            <button 
-              onClick={() => setActiveTab('lista')} 
-              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'lista' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
-            >
-              05. Lista
-            </button>
+
             <button 
               onClick={() => setActiveTab('tooltip')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'tooltip' ? 'bg-emerald-500/10 text-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              06. Tooltip
+              04. Tooltip
             </button>
+
+            
+            
             <button 
               onClick={() => setActiveTab('form')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'form' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              07. Formulario
+              05. Forms
+            </button>
+
+            <button 
+              onClick={() => setActiveTab('lista')} 
+              className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'lista' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
+            >
+              06. List (using Prop Drilling)
             </button>
        
               <button 
               onClick={() => setActiveTab('context')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'context' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              08. Context API
+              07. List (using Context API)
             </button>
             <button 
               onClick={() => setActiveTab('notas')} 
               className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'notas' ? 'bg-emerald-500/10 text-emerald-400 border-l-2 border-emerald-400 pl-[1.75rem]' : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200'}`}
             >
-              09. Notes
+              08. Notes
             </button>
           </nav>
         </div>

@@ -10,10 +10,10 @@ function NotesForm(){
         validate={values => {
   let errors = {};
   if (!values.title) {
-    errors.title = 'El título es requerido';
+    errors.title = 'The title is required';
   }
   if (!values.message) {
-    errors.message = 'El mensaje es requerido';
+    errors.message = 'The message is required';
   }
   return errors;
 }}
@@ -33,17 +33,17 @@ function NotesForm(){
             ({isSubmitting})=>(
                 <Form className="form items-center align-center justify-center">
                     <div>
-                        <label htmlFor="title">Titulo</label>
+                        <label htmlFor="title">Title</label>
                         <Field type="text" name="title"/>
-                        <ErrorMessage name="title" component="p"/>
+                        <ErrorMessage className="pb-2 text-red-500" name="title" component="p"/>
                     </div>
                     <div>
-                        <label htmlFor="message">Que quieres guardar</label>
+                        <label htmlFor="message">What do you want to save</label>
                         <Field as="textarea" name="message"/>
-                        <ErrorMessage name="message" component="p"/>
+                        <ErrorMessage className="pb-2 text-red-500"name="message" component="p"/>
                     </div>
                     <button className="btn" type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? "Guardando tu nota..." : "Guardar nota"}
+                    {isSubmitting ? "Saving your note..." : "Save Note"}
                     </button>
                 </Form>
             )   
